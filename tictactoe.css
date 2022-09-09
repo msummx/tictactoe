@@ -116,3 +116,17 @@ body {
 .row:nth-child(even) .square:nth-child(even) {
     background-color: rgb(242, 147, 147);
 }
+
+@media screen and (max-width: 600px) {
+    .square {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 275px) {
+    .square {
+        width: 50px;
+        height: 50px;
+    }
+}

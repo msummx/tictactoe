@@ -74,7 +74,6 @@ function play(box,boardNumber){
     else{
         playerX = true
     }
-    console.log(board)
     turn++
 }
 
