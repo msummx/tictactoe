@@ -39,8 +39,8 @@ const newGame = () => {
     box8.innerText =""
     box9.innerText =""
 
-    xscore.innerText= `Player X Wins: ${playerXwins}`
-    oscore.innerText= `Player O Wins: ${playerOwins}`
+    xscore.innerText= `PLAYER ❌ WINS: ${playerXwins}`
+    oscore.innerText= `PLAYER ⭕ WINS: ${playerOwins}`
 
 }
 
@@ -99,122 +99,84 @@ const getBox = (number) => {
     return document.getElementById(`box${number}`)
 }
 
+const xwin = () => {
+    player.innerText = "PLAYER ❌ wins!"
+    playerXwins += 1 
+    playing = false
+}
+
+const owin = () => {
+    player.innerText = "PLAYER ⭕ wins!"
+    playerOwins += 1
+    playing = false
+}
+
 const checkWin = () => {
     if ((board['1'] == board['2'] && board['2'] == board['3']) && board['1'] != '-'){
         if (board['1'] == 'X'){
-            console.log('Player X wins!')
-            player.innerText = "PLAYER ❌ wins!"
-            playerXwins += 1
-            playing = false
+            xwin()
         }
         else {
-            console.log('Player O wins!')
-            player.innerText = "PLAYER ⭕ wins!"
-            playerOwins += 1
-            playing = false
+            owin()
         }
     }
     else if ((board['4'] == board['5'] && board['5'] == board['6']) && board['4'] != '-'){
         if (board['4'] == 'X'){
-            console.log('Player X wins!')
-            player.innerText = "PLAYER ❌ wins!"
-            playerXwins += 1 
-            playing = false
+            xwin()
         }
         else {
-            console.log('Player O wins!')
-            player.innerText = "PLAYER ⭕ wins!"
-            playerOwins += 1
-            playing = false
+            owin()
         }
     }
     else if ((board['7'] == board['8'] && board['8'] == board['9']) && board['7'] != '-'){
         if (board['7'] == 'X'){
-            console.log('Player X wins!')
-            player.innerText = "PLAYER ❌ wins!"
-            playerXwins += 1
-            playing = false
+            xwin()
         }
         else {
-            console.log('Player O wins!')
-            player.innerText = "PLAYER ⭕ wins!"
-            playerOwins += 1
-            playing = false
+            owin()
         }
     }
     else if ((board['1'] == board['4'] && board['4'] == board['7']) && board['1'] != '-'){
         if (board['1'] == 'X'){
-            console.log('Player X wins!')
-            player.innerText = "PLAYER ❌ wins!"
-            playerXwins += 1
-            playing = false
+            xwin()
         }
         else {
-            console.log('Player O wins!')
-            player.innerText = "PLAYER ⭕ wins!"
-            playerOwins += 1
-            playing = false
+            owin()
         }
     }
     else if ((board['2'] == board['5'] && board['5'] == board['8']) && board['2'] != '-'){
         if (board['2'] == 'X'){
-            console.log('Player X wins!')
-            player.innerText = "PLAYER ❌ wins!"
-            playerXwins += 1
-            playing = false
+            xwin()
         }
         else {
-            console.log('Player O wins!')
-            player.innerText = "PLAYER ⭕ wins!"
-            playerOwins += 1
-            playing = false
+            owin()
         }
     }
     else if ((board['3'] == board['6'] && board['6'] == board['9']) && board['3'] != '-'){
         if (board['3'] == 'X'){
-            console.log('Player X wins!')
-            player.innerText = "PLAYER ❌ wins!"
-            playerXwins += 1 
-            playing = false
+            xwin()
         }
         else {
-            console.log('Player O wins!')
-            player.innerText = "PLAYER ⭕ wins!"
-            playerOwins += 1
-            playing = false
+            owin()
         }
     }
     else if ((board['1'] == board['5'] && board['5'] == board['9']) && board['1'] != '-'){
         if (board['1'] == 'X'){
-            console.log('Player X wins!')
-            player.innerText = "PLAYER ❌ wins!"
-            playerXwins += 1
-            playing = false
+            xwin()
         }
         else {
-            console.log('Player O wins!')
-            player.innerText = "PLAYER ⭕ wins!"
-            playerOwins += 1
-            playing = false
+            owin()
         }
     }
     else if ((board['3'] == board['5'] && board['5'] == board['7']) && board['3'] != '-'){
         if (board['3'] == 'X'){
-            console.log('Player X wins!')
-            player.innerText = "PLAYER ❌ wins!"
-            playerXwins += 1
-            
-            playing = false
+            xwin()
         }
         else {
-            console.log('Player O wins!')
-            player.innerText = "PLAYER ⭕ wins!"
-            playerOwins += 1
-            playing = false
+            owin()
         }
     }
     else if (turn >= 9){
-        console.log('Tie game!')
         player.innerText = 'Tie Game!'
         playing = false
     }
