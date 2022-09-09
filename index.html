@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+  <link rel="stylesheet" href="./tictactoe.css">
+</head>
+<body>
+    <div id="mainlayout">
+        <h1 class="text-center font-effect-shadow-multiple" id="title">
+            Tic-Tac-Toe
+        </h1>
+        <div id="playerscoresboard">
+            <p class="scoretext" id="playerXscore">Player X Wins: 0</p>
+            <p class="scoretext" div id="playerOscore">Player O Wins: 0</p>
+        </div>
+        <div class="scale-up-center" id="board">
+            <div class="row">
+                <div class="square" id="box1" onclick="boxClick1()"></div>
+                <div class="square" id="box2" onclick="boxClick2()"></div>
+                <div class="square" id="box3" onclick="boxClick3()"></div>
+            </div>
+            <div class="row">
+                <div class="square" id="box4" onclick="boxClick4()"></div>
+                <div class="square" id="box5" onclick="boxClick5()"></div>
+                <div class="square" id="box6" onclick="boxClick6()"></div>
+            </div>
+            <div class="row">
+                <div class="square" id="box7" onclick="boxClick7()"></div>
+                <div class="square" id="box8" onclick="boxClick8()"></div>
+                <div class="square" id="box9" onclick="boxClick9()"></div>
+            </div>
+        </div>
+            <div class="shake" id="boardmessage">
+                <p id="player">PLAYER TURN ❌</p>
+        </div>
+        <div>
+            <div class="col-md-12" id="buttons">
+                <button type="button" class="btn btn-primary active" id="newgame" onclick="newGame()">
+                    New Game (Player vs. Player)
+                </button>
+                <button type="button" class="btn btn-primary active" id="newgameCPU" onclick="newGameCPU()">
+                    New Game (Player vs. CPU)
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+<script src="./tictactoe.js"></script>
+</html>
