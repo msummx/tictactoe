@@ -1,0 +1,114 @@
+body {
+    background-color: rgb(255, 204, 179);
+}
+
+#mainlayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#title {
+    font-size: 56px;
+}
+#buttons {
+    justify-content: center;
+    text-align: center;
+}
+
+#board {
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+}
+
+#playerscoresboard {
+    display: wrap;
+    flex-wrap: wrap;
+    white-space: normal;
+    text-align: center;
+}
+
+#boardmessage {
+    margin: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Added animation to use when emoji are used. Just need to use this class tag to assess*/
+.scale-up-center {
+	-webkit-animation: scale-up-center 0.5s cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate both;
+	        animation: scale-up-center 0.5s cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate both;
+}
+
+ @-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+
+  /* Shake Animation for Player's Turn */
+  .shake {
+    animation: shake-animation 4s ease infinite;
+    transform-origin: 50% 50%;
+  }
+
+@keyframes shake-animation {
+    0% { transform:translate(0,0) }
+    1.78571% { transform:translate(5px,0) }
+    3.57143% { transform:translate(0,0) }
+    5.35714% { transform:translate(5px,0) }
+    7.14286% { transform:translate(0,0) }
+    8.92857% { transform:translate(5px,0) }
+    10.71429% { transform:translate(0,0) }
+    100% { transform:translate(0,0) }
+  }
+
+#emoji {
+    display: inline-block;
+    margin: 0 0.5rem;
+    animation-duration: 2s;
+}
+
+.row {
+    display: flex;
+    
+}
+
+.square {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(242, 147, 147);
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.square:nth-child(even) {
+    background-color: rgb(85, 73, 148);
+}
+
+.row:nth-child(even) .square:nth-child(odd) {
+    background-color: rgb(85, 73, 148);
+}
+
+.row:nth-child(even) .square:nth-child(even) {
+    background-color: rgb(242, 147, 147);
+}
