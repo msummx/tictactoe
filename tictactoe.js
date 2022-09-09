@@ -81,13 +81,9 @@ function play(box,boardNumber){
 const boxClick = (number) => {
     if (playing){
         if (board[`${number}`]=='-'){
-            play(getBox(number), number)
+            play(document.getElementById(`box${number}`), number)
         }
     }
-}
-
-const getBox = (number) => {
-    return document.getElementById(`box${number}`)
 }
 
 const xwin = () => {
