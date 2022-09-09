@@ -49,55 +49,56 @@ function newGameCPU(){
     cpu = true
 }
 
-
-// new stuff below!!!!!!!!!!!!!!!!!!!!
-let aiTurn = false
 function computerTurn(){
     i=0
     while (true && i <30){
-        
         i++
-        //checkingForEmpty()
         aiNumber = Math.floor(Math.random() * 10);
         if(board[aiNumber] == '-'){
-            if(aiNumber == '1'){boxClick1()}
-            if(aiNumber == '2'){boxClick2()}
-            if(aiNumber == '3'){boxClick3()}
-            if(aiNumber == '4'){boxClick4()}
-            if(aiNumber == '5'){boxClick5()}
-            if(aiNumber == '6'){boxClick6()}
-            if(aiNumber == '7'){boxClick7()}
-            if(aiNumber == '8'){boxClick8()}
-            if(aiNumber == '9'){boxClick9()}
-            i=0
+            boxClick(aiNumber)
             break
         }
     }
 }
-function playComputer(boxNumber,boardNumber){
+function play(box,boardNumber){
+      
     if(playerX == true){
-        boxNumber.innerText="❌";//this puts an X on the html board
+        box.innerText="❌";//this puts an X on the html board
         board[boardNumber]="X" //this puts an X in the board dictionary
         player.innerText = "PLAYER TURN ⭕";//this sets html to display whos turn it is
     }
     else{
         player.innerText = "PLAYER TURN ❌";//this puts an O on the html board
-        boxNumber.innerText="⭕";//this sets html to display whos turn it is
+        box.innerText="⭕";//this sets html to display whos turn it is
         board[boardNumber]="O"//this puts an O in the board dictionary
     }
     checkWin()
-    if(playerX == true){
+   
+    if(playerX){
         playerX = false
-        aiTurn = true
-        computerTurn()
+        if(cpu){
+            computerTurn();
+        }
     }
     else{
         playerX = true
-        aiTurn = false
     }
-    turn++
     console.log(board)
+    turn++
 }
+
+const boxClick = (number) => {
+    if (playing){
+        if (board[`${number}`]=='-'){
+            play(getBox(number), number)
+        }
+    }
+}
+
+const getBox = (number) => {
+    return document.getElementById(`box${number}`)
+}
+
 const checkWin = () => {
     if ((board['1'] == board['2'] && board['2'] == board['3']) && board['1'] != '-'){
         if (board['1'] == 'X'){
@@ -218,115 +219,3 @@ const checkWin = () => {
         playing = false
     }
 }
-function play(boxNumber,boardNumber){
-      
-    if(playerX == true){
-        boxNumber.innerText="❌";//this puts an X on the html board
-        board[boardNumber]="X" //this puts an X in the board dictionary
-        player.innerText = "PLAYER TURN ⭕";//this sets html to display whos turn it is
-    }
-    else{
-        player.innerText = "PLAYER TURN ❌";//this puts an O on the html board
-        boxNumber.innerText="⭕";//this sets html to display whos turn it is
-        board[boardNumber]="O"//this puts an O in the board dictionary
-    }
-    checkWin()
-    if (cpu == false){
-        if(playerX == true){
-            playerX = false
-        }
-        else{
-            playerX = true
-        }}
-    console.log(board)
-    turn++
-}
-const boxClick1 = () => {
-    if (playing){
-        if(board["1"]=="-"){
-            if(cpu){
-                playComputer(box1,1)}
-            else{
-                play(box1,1)}}}}
-                
-const boxClick2 = () => {
-    if (playing){
-    if(board["2"]=="-"){
-        if(cpu){
-            playComputer(box2,2)
-        }
-        else{
-            play(box2,2)
-        }
-    }}
-}
-const boxClick3 = () => {
-    if (playing){
-    if(board["3"]=="-"){
-        if(cpu){
-            playComputer(box3,3)
-        }
-        else{
-            play(box3,3)
-        }
-    }}
-}
-const boxClick4 = () => {
-    if (playing){
-    if(board["4"]=="-"){
-        if(cpu){
-            playComputer(box4,4)
-        }
-        else{
-            play(box4,4)
-        }
-    }}
-}
-const boxClick5 = () => {
-    if (playing){
-    if(board["5"]=="-"){
-        if(cpu){
-            playComputer(box5,5)
-        }
-        else{
-            play(box5,5)
-        }
-    }}
-}
-const boxClick6 = () => {
-    if (playing){
-    if(board["6"]=="-"){
-        if(cpu){
-            playComputer(box6,6)
-        }
-        else{
-            play(box6,6)
-        }
-    }}
-}
-const boxClick7 = () => {
-    if (playing){
-    if(board["7"]=="-"){
-        if(cpu){
-            playComputer(box7,7)
-        }
-        else{
-            play(box7,7)
-        }
-    }}
-}
-const boxClick8 = () => {
-    if (playing){
-    if(board["8"]=="-"){
-        if(cpu){
-            playComputer(box8,8)}
-        else{
-            play(box8,8)}}}}
-
-const boxClick9 = () => {
-    if (playing){
-        if(board["9"]=="-"){
-            if(cpu){
-                playComputer(box9,9)}
-            else{
-                play(box9,9)}}}}

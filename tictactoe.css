@@ -37,6 +37,9 @@ body {
     font-weight: bold;
 }
 
+#signature {
+    margin: 10px;
+}
 /* Added animation to use when emoji are used. Just need to use this class tag to assess*/
 .scale-up-center {
 	-webkit-animation: scale-up-center 0.5s cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate both;
@@ -93,6 +96,7 @@ body {
 }
 
 .square {
+    font-size: 56px;
     width: 150px;
     height: 150px;
     background-color: rgb(242, 147, 147);
